@@ -14,6 +14,85 @@ body{
     font-family: 'Space Mono';
 }
 
+/* Media Query para telas de até 600px (abrange os 375px que você pediu) */
+@media (max-width: 691px) {
+    
+    body {
+        /* Remove o centralizar vertical para permitir o scroll natural */
+        justify-content: flex-start;
+        padding-top: 60px;
+    }
+
+    .container {
+        gap: 2.5rem; /* Diminui o espaço entre o logo e o card */
+        width: 100%;
+    }
+
+    main {
+        flex-direction: column; /* Empilha a parte esquerda e direita */
+        width: 100%;
+        border-radius: 25px 25px 0 0; /* Estilo comum em apps mobile */
+        padding: 24px;
+        gap: 32px;
+    }
+
+    .left {
+        width: 100%;
+    }
+
+    /* Ajusta os botões de porcentagem para 2 colunas no mobile */
+   .btn-section {
+        justify-content: space-around;
+        grid-template-columns: repeat(2, 1fr); /* '1fr' faz a coluna ocupar 1 fração do espaço total */
+        width: 100%;
+        gap: 15px; /* Aumenta um pouco o respiro entre eles no toque */
+    }
+
+    button {
+        width: 100% !important; /* Força o botão a preencher a largura da coluna da grade */
+        height: 50px; /* Aumentamos um pouco a altura para facilitar o clique com o dedo */
+    }
+
+   .right button {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .right section {
+        gap: 20px; /* Diminui o espaço interno no mobile */
+    }
+
+    .right button {
+        margin-top: 10px;
+        width: 100%; /* Botão RESET largo para facilitar o toque */
+    }
+
+    .amount {
+        font-size: 24px; /* Diminui um pouco a fonte do preço no mobile */
+    }
+    
+    input{
+        text-align: center;
+    }
+}
+
+.error{
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+.error-msg{
+    color: #E17052; 
+    font-size: 12px; 
+    display: none;
+    font-weight: bold;
+}
+
+.input-error{
+    border: 2px solid #E17052 !important;
+}
+
 .container{
     display: flex;
     flex-direction: column;
@@ -25,7 +104,7 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 40px;
+    padding: 30px;
     gap: 50px;
     background-color: hsl(0, 100%, 100%);
     border-radius: 20px;
@@ -53,7 +132,7 @@ main{
     top: 50%;
     left: 18px;
     transform: translateY(-50%);
-
+    z-index: 1;
 }
 
 .btn-section{
@@ -80,8 +159,9 @@ button{
 }
 
 button:hover{
-    background-color: hsl(172, 67%, 45%);
+    background-color: hsl(172, 77%, 63%);
     transform: translateY(-3px);
+    box-shadow: hsl(172, 77%, 63%) 0px 48px 100px 0px;
 }
 
 .main-section input{
@@ -93,23 +173,18 @@ button:hover{
     color: hsl(183, 100%, 15%);
     cursor: pointer;
     width: 100%;
-    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
-                box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
-                border-color 0.3s ease;
 }
 
 .main-section input:hover, .top-section input:hover,
 .bottom-section input:hover{
-    border: 2px solid  hsl(172, 67%, 45%);
-    transform: translateY(-3px);
+    outline: 2px solid hsl(172, 67%, 45%);
 }
 
-.main-section input:active, .top-section input:active,
-.bottom-section input:active{
-    border: 2px solid  hsl(172, 67%, 45%);
+.main-section input:focus, .top-section input:focus,
+.bottom-section input:focus{
+    border: 2px solid hsl(172, 67%, 45%);
+    outline: none;
 }
-
-
 
 .top-section input, .bottom-section input{
     border: none;
@@ -121,7 +196,63 @@ button:hover{
     color: hsl(183, 100%, 15%);
     cursor: pointer;
     width: 100%;
-    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
-                box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
-                border-color 0.3s ease;
+}
+
+.right{
+    background-color: hsl(183, 100%, 15%);
+    width: 20rem;
+    height: 20rem;
+    border-radius: 10px;
+}
+
+.right h4{
+    color: hsl(0, 100%, 100%);
+}
+
+.right p{
+    color: hsl(184, 14%, 56%);
+}
+
+.right section{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: flex-start;
+    padding: 20px;
+    gap: 50px;
+}
+
+.tip-amount, .total-amount{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.amount{
+    color: hsl(172, 67%, 45%);
+    font-size: 30px;
+    text-align: right;
+    word-break: break-all;
+    max-width: 60%;
+}
+
+.btn-section-right{
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+    width: 100%;
+}
+
+.right button{
+    display: block;
+    margin-top: 0;
+    width: 100%;
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+}
+
+.right button:hover{
+    background-color: hsl(172, 77%, 63%);
 }

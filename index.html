@@ -35,7 +35,10 @@
                     </section>
                 
                 <section class="bottom-section">
-                    <label>Number of People</label>
+                    <div class="error">
+                        <label>Number of People</label>
+                        <span id="error-msg" class="error-msg">Can't be zero</span>
+                    </div>
                     <div class="input-icon">
                         <img src="assets/icon-person.svg" alt="" class="person">
                         <input type="number" id="number-of-people" name="number-of-people" placeholder="0">
@@ -46,16 +49,16 @@
             <div class="right">
                 <section class="results-section">
                     <div class="tip-amount">
-                        <h4>Tip Amount</h4>
-                        <p>/ person</p>
+                        <h4>Tip Amount <br><p>/ person</p></h4>
+                        <div class="amount" id="amount-tip">$0.00</div>
                     </div>
-                    <div class="amount">$0.00</div>
                     <div class="total-amount">
-                        <h4>Total</h4>
-                        <p>/ person</p>
+                        <h4>Total<br><p>/ person</p></h4>
+                        <div class="amount" id="amount-total">$0.00</div>
                     </div>
-                    <div class="amount">$0.00</div>
-                    <button class="btn-reset">Reset</button>
+                    <div class="btn-section-right">
+                        <button class="btn-reset">Reset</button>
+                    </div>
                 </section>
             </div>
         </main>
