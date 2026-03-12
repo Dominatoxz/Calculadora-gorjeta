@@ -5,7 +5,7 @@
 }
 
 body{
-    background-color:hsl(185, 41%, 84%);
+    background-color: #f5e6e8;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -78,7 +78,6 @@ body{
 
 .error{
     display: flex; 
-    justify-content: space-between;
     align-items: center;
 }
 
@@ -120,7 +119,7 @@ main{
     display: flex;
     flex-direction: column;
     gap: 5px;
-    color: hsl(183, 100%, 15%);
+    color: #192a51;
 }
 
 .input-icon{
@@ -142,7 +141,7 @@ main{
 }
 
 button{
-    background-color: hsl(183, 100%, 15%);
+    background-color: #192a51;
     color: hsl(0, 100%, 100%);
     display: flex;
     justify-content: center;
@@ -159,47 +158,47 @@ button{
 }
 
 button:hover{
-    background-color: hsl(172, 77%, 63%);
+    background-color: #967aa1;
     transform: translateY(-3px);
-    box-shadow: hsl(172, 77%, 63%) 0px 48px 100px 0px;
+    box-shadow: #967aa1 0px 48px 100px 0px;
 }
 
 .main-section input{
     text-align: right;
     border: none;
-    background-color: hsl(189, 47%, 97%);
+    background-color: #ded4e6;
     border-radius: 10px;
     font-family: 'Space Mono';
-    color: hsl(183, 100%, 15%);
+    color: #192a51;
     cursor: pointer;
     width: 100%;
 }
 
 .main-section input:hover, .top-section input:hover,
 .bottom-section input:hover{
-    outline: 2px solid hsl(172, 67%, 45%);
+    border: 2px solid #967aa1;
 }
 
 .main-section input:focus, .top-section input:focus,
 .bottom-section input:focus{
-    border: 2px solid hsl(172, 67%, 45%);
+    border: 2px solid #967aa1;
     outline: none;
 }
 
 .top-section input, .bottom-section input{
     border: none;
-    background-color: hsl(189, 47%, 97%);
+    background-color: #ded4e6;
     height: 40px;
     border-radius: 10px;
     text-align: right;
     font-family: 'Space Mono';
-    color: hsl(183, 100%, 15%);
+    color: #192a51;
     cursor: pointer;
     width: 100%;
 }
 
 .right{
-    background-color: hsl(183, 100%, 15%);
+    background-color: #192a51;
     width: 20rem;
     height: 20rem;
     border-radius: 10px;
@@ -210,7 +209,7 @@ button:hover{
 }
 
 .right p{
-    color: hsl(184, 14%, 56%);
+    color: hsl(304, 14%, 56%);
 }
 
 .right section{
@@ -231,7 +230,7 @@ button:hover{
 }
 
 .amount{
-    color: hsl(172, 67%, 45%);
+    color: #967aa1;
     font-size: 30px;
     text-align: right;
     word-break: break-all;
@@ -249,10 +248,10 @@ button:hover{
     display: block;
     margin-top: 0;
     width: 100%;
-    background-color: hsl(172, 67%, 45%);
-    color: hsl(183, 100%, 15%);
+    background-color: #967aa1;
+    color: #192a51;
 }
 
 .right button:hover{
-    background-color: hsl(172, 77%, 63%);
+    background-color: #967aa1;
 }

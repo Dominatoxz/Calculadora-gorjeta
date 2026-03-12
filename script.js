@@ -7,6 +7,7 @@ const tipResult = document.getElementById('amount-tip');
 const totalResult = document.getElementById('amount-total');
 const resetBtn = document.querySelector('.btn-reset');
 const errorMsg = document.getElementById('error-msg');
+const errorMsgLessZero = document.getElementById('error-msg-less-zero');
 
 let billValue = 0;
 let tipValue = 0; 
@@ -54,21 +55,34 @@ customTip.addEventListener('input', () => {
 // Evento para número de pessoas + Validação de erro
 peopleInput.addEventListener('input', () => {
     peopleValue = parseFloat(peopleInput.value);
-
-    // Se for 0 ou vazio, mostra erro
-    if (peopleValue <= 0 || isNaN(peopleValue)) {
-        errorMsg.style.display = "block"; 
-        peopleInput.style.outline = "2px solid #E17052"; // Borda vermelha/laranja
+    
+    switch (true){
+        case peopleValue < 0:
+            errorMsg.style.display = "none";
+            errorMsgLessZero.style.display = "block"; 
+            peopleInput.style.outline = "2px solid #E17052"; // Borda vermelha/laranja
         
-        // Zera os resultados enquanto houver erro
-        tipResult.textContent = "$0.00";
-        totalResult.textContent = "$0.00";
-    } else {
-        // Se estiver correto, esconde o erro
-        errorMsg.style.display = "none";
-        peopleInput.style.outline = "none";
-        calculate(); // Chama o cálculo normal
+            tipResult.textContent = "$0.00";
+            totalResult.textContent = "$0.00";
+            break
+        
+        case peopleValue === 0 || isNaN(peopleValue): 
+            errorMsgLessZero.style.display = "none"
+            errorMsg.style.display = "block"; 
+            peopleInput.style.outline = "2px solid #E17052"; // Borda vermelha/laranja
+        
+            tipResult.textContent = "$0.00";
+            totalResult.textContent = "$0.00";
+            break
+        
+        default:
+            errorMsgLessZero.style.display = "none"
+            errorMsg.style.display = "none";
+            peopleInput.style.outline = "none";
+            calculate();
+
     }
+
 });
 
 // Botão Reset

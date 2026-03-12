@@ -6,6 +6,7 @@
     <title>Calculadora de Gorjeta</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap">
+    <link rel="shortcut icon" href="assets/3d-calculator.png" type="image/x-icon">
 </head>
 <body>
     <div class="container">
@@ -35,13 +36,14 @@
                     </section>
                 
                 <section class="bottom-section">
-                    <div class="error">
                         <label>Number of People</label>
-                        <span id="error-msg" class="error-msg">Can't be zero</span>
-                    </div>
                     <div class="input-icon">
                         <img src="assets/icon-person.svg" alt="" class="person">
                         <input type="number" id="number-of-people" name="number-of-people" placeholder="0">
+                    </div>
+                    <div class="error">
+                        <span id="error-msg" class="error-msg">Can't be zero</span>
+                        <span id="error-msg-less-zero" class="error-msg">Can't be less then zero</span>
                     </div>
                     </section>
             </div>
